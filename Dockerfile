@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:latest
 
 LABEL Description="This image creates an exit node" Vendor="Patrick Hieber" Version="0.1"
 
