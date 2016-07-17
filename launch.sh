@@ -4,4 +4,4 @@
 
 bash
 
-tail -f /var/log/tor/notice.log
+tail -f /var/log/tor/notices.log 
