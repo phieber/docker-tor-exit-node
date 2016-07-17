@@ -4,7 +4,7 @@ LABEL Description="This image creates an exit node" Vendor="Patrick Hieber" Vers
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install -y tor tor-geoipdb tor-arm slurm vim-nox
+RUN apt-get install -y tor tor-geoipdb tor-arm slurm vim-nox dstat
 
 ADD launch.sh launch.sh
 ADD torrc /etc/tor/torrc
