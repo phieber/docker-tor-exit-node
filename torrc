@@ -41,7 +41,7 @@ DisableDebuggerAttachment 0
 ## Send every possible message to /var/log/tor/debug.log
 #Log debug file /var/log/tor/debug.log
 ## Use the system log instead of Tor's logfiles
-#Log notice syslog
+Log notice syslog
 ## To send all messages to stderr:
 #Log debug stderr
 
@@ -93,22 +93,22 @@ ORPort 9001
 
 ## The IP address or full DNS name for incoming connections to your
 ## relay. Leave commented out and Tor will guess.
-Address tor.yofreke.com
+#Address some.f.q.d.n.com
 
 ## If you have multiple network interfaces, you can specify one for
 ## outgoing traffic to use.
 # OutboundBindAddress 10.0.0.5
 
 ## A handle for your relay, so people don't have to refer to it by key.
-Nickname yofsExitNude
+#Nickname somename
 
 ## Define these to limit how much relayed traffic you will allow. Your
 ## own traffic is still unthrottled. Note that RelayBandwidthRate must
 ## be at least 20 KB.
 ## Note that units for these config options are bytes per second, not bits
 ## per second, and that prefixes are binary prefixes, i.e. 2^10, 2^20, etc.
-RelayBandwidthRate 100 KB  # Throttle traffic to 100KB/s (800Kbps)
-RelayBandwidthBurst 200 KB # But allow bursts up to 200KB/s (1600Kbps)
+#RelayBandwidthRate 100 KB  # Throttle traffic to 100KB/s (800Kbps)
+#RelayBandwidthBurst 200 KB # But allow bursts up to 200KB/s (1600Kbps)
 
 ## Use these to restrict the maximum traffic per day, week, or month.
 ## Note that this threshold applies separately to sent and received bytes,
@@ -116,12 +116,12 @@ RelayBandwidthBurst 200 KB # But allow bursts up to 200KB/s (1600Kbps)
 ## hibernating.
 ##
 ## Set a maximum of 4 gigabytes each way per period.
-AccountingMax 10 GB
+#AccountingMax 10 GB
 ## Each period starts daily at midnight (AccountingMax is per day)
 #AccountingStart day 00:00
 ## Each period starts on the 3rd of the month at 15:00 (AccountingMax
 ## is per month)
-AccountingStart month 3 15:00
+#AccountingStart month 3 15:00
 
 ## Contact info to be published in the directory, so we can contact you
 ## if your relay is misconfigured or something else goes wrong. Google
@@ -190,28 +190,29 @@ DirPort 9030 # what port to advertise for directory connections
 ## address manually to your friends, uncomment this line:
 #PublishServerDescriptor 0
 
-ExitPolicy accept *:43        # WHOIS
-ExitPolicy accept *:53        # DNS
-ExitPolicy accept *:79-81     # finger, HTTP
-ExitPolicy accept *:110       # POP3
-ExitPolicy accept *:143       # IMAP
-ExitPolicy accept *:194       # IRC
-ExitPolicy accept *:220       # IMAP3
-ExitPolicy accept *:389       # LDAP
-ExitPolicy accept *:443       # HTTPS
-ExitPolicy accept *:531       # IRC/AIM
-ExitPolicy accept *:989-995   # FTP over SSL, Netnews Administration System, telnets, IMAP over SSL, ircs, POP3 over SSL
-ExitPolicy accept *:1194      # OpenVPN
-ExitPolicy accept *:5190      # ICQ
-ExitPolicy accept *:5222-5223 # XMPP, XMPP over SSL
-ExitPolicy accept *:5228      # Android Market
-ExitPolicy accept *:6660-6669 # IRC
-ExitPolicy accept *:6679      # IRC SSL
-ExitPolicy accept *:6697      # IRC SSL
-ExitPolicy accept *:8080      # HTTP Proxies
-ExitPolicy accept *:8888      # HTTP Proxies, NewsEDGE
-ExitPolicy accept *:9418      # git
-ExitPolicy accept *:11371     # OpenPGP hkp (http keyserver protocol)
-ExitPolicy accept *:19294     # Google Voice TCP
-ExitPolicy accept *:64738     # Mumble
-ExitPolicy reject *:*
+#ExitPolicy accept *:43        # WHOIS
+#ExitPolicy accept *:53        # DNS
+#ExitPolicy accept *:79-81     # finger, HTTP
+#ExitPolicy accept *:110       # POP3
+#ExitPolicy accept *:143       # IMAP
+#ExitPolicy accept *:194       # IRC
+#ExitPolicy accept *:220       # IMAP3
+#ExitPolicy accept *:389       # LDAP
+#ExitPolicy accept *:443       # HTTPS
+#ExitPolicy accept *:531       # IRC/AIM
+#ExitPolicy accept *:989-995   # FTP over SSL, Netnews Administration System, telnets, IMAP over SSL, ircs, POP3 over SSL
+#ExitPolicy accept *:1194      # OpenVPN
+#ExitPolicy accept *:5190      # ICQ
+#ExitPolicy accept *:5222-5223 # XMPP, XMPP over SSL
+#ExitPolicy accept *:5228      # Android Market
+#ExitPolicy accept *:6660-6669 # IRC
+#ExitPolicy accept *:6679      # IRC SSL
+#ExitPolicy accept *:6697      # IRC SSL
+#ExitPolicy accept *:8080      # HTTP Proxies
+#ExitPolicy accept *:8888      # HTTP Proxies, NewsEDGE
+#ExitPolicy accept *:9418      # git
+#ExitPolicy accept *:11371     # OpenPGP hkp (http keyserver protocol)
+#ExitPolicy accept *:64738     # Mumble
+#ExitPolicy reject *:*
+
+ExitPolicy accept *:*
