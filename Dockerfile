@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install -y tor tor-geoipdb tor-arm nano slurm
+RUN apt-get install -y tor tor-geoipdb tor-arm slurm vim-nox
 
 ADD launch.sh launch.sh
 ADD torrc /etc/tor/torrc
